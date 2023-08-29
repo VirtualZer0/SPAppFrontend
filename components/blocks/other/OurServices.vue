@@ -119,6 +119,7 @@
     gap: 12px;
     transition: transform 0.3s ease;
     width: 43%;
+    min-width: 690px;
 
     &-table {
       display: flex;
@@ -166,6 +167,43 @@
         .sp {
           background: var(--p1-color);
         }
+      }
+    }
+
+    @media (max-width: 1024px) {
+      width: 100%;
+      min-width: unset;
+
+      &-content {
+        padding-left: 0;
+      }
+    }
+
+    @media (max-width: 768px) {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+
+      h3 {
+        align-self: center;
+        text-align: center;
+
+        .serv-badges {
+          left: calc(100% + 8px);
+
+          .sp,
+          .spm {
+            width: 2rem;
+            font-size: 0.65rem;
+            border-radius: 4px;
+          }
+        }
+      }
+
+      .primary-button {
+        margin: 0 auto;
+        width: 210px;
+        height: 50px;
       }
     }
 

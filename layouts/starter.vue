@@ -1,9 +1,6 @@
 <template>
   <main class="starter-layout layout text-m">
     <MainHeader key="mainHeader">
-      <template #logo>
-        <StarterHeaderLogo />
-      </template>
       <template #nav>
         <NuxtLink
           v-for="item in menu"
@@ -20,7 +17,6 @@
   </main>
 </template>
 <script lang="ts" setup>
-import StarterHeaderLogo from '~/components/logo/StarterHeaderLogo.vue';
 import MainHeader from '~/components/blocks/nav/MainHeader.vue';
 import { useMainStore } from '~/store/main';
 import BottomMenu from '~/components/blocks/nav/BottomMenu.vue';
@@ -33,6 +29,8 @@ useSeoMeta({
   ogDescription: 'Краундфандинговая платформа для сбора АРов на ваши проекты СП и СПм',
   description: 'Краундфандинговая платформа для сбора АРов на ваши проекты СП и СПм',
   ogSiteName: 'SPApp Starter',
+  ogImage: '/img/starter/cover.png',
+  twitterCard: 'summary_large_image',
   themeColor: '#ff0054'
 });
 

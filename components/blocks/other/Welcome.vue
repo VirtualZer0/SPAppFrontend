@@ -62,7 +62,7 @@
   }
 
   h2 {
-    font-size: 3.5vw;
+    font-size: 3rem;
     z-index: 0;
 
     .line-1 {
@@ -107,6 +107,45 @@
 
     .three {
       animation-delay: 1.33s;
+    }
+  }
+
+  @media (max-width: 640px) {
+    margin-top: 0;
+    padding-bottom: 24px;
+
+    .top {
+      flex-direction: column;
+    }
+
+    .anim-logo {
+      width: 60vw;
+      height: 60vw;
+
+      .layer-2 {
+        width: 45vw;
+        height: 45vw;
+      }
+    }
+
+    h2 {
+      font-size: 1.7rem;
+      text-align: center;
+
+      .line-1,
+      .line-2 {
+        margin-left: 0px;
+      }
+    }
+
+    .bottom {
+      margin-top: 2vh;
+      gap: 12px;
+      color: var(--p1-color);
+
+      .pi {
+        font-size: 32px;
+      }
     }
   }
 }

@@ -18,14 +18,14 @@
         <img
           src="/img/icons/diamond.svg"
           height="28"
-          width="24"
+          width="28"
           alt="АРы"
         />
       </div>
       <img
         class="avatar"
         height="42"
-        width="24"
+        width="42"
         alt="Аватар"
         :src="getMinecraftAvatar(mainStore.user.minecraftUuid ?? 'X-Steve')"
       />

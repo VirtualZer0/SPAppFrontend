@@ -1,5 +1,5 @@
 <template>
-  <main class="company-layout layout text-m">
+  <main class="market-layout layout text-m">
     <MainHeader key="mainHeader">
       <template #nav>
         <NuxtLink>Главная</NuxtLink>
@@ -13,25 +13,28 @@
   </main>
 </template>
 <script lang="ts" setup>
+import CompanyHeaderLogo from '~/components/logo/CompanyHeaderLogo.vue';
 import MainHeader from '~/components/blocks/nav/MainHeader.vue';
 import { useMainStore } from '~/store/main';
 
 useMainStore().switchService('wa');
 
 useSeoMeta({
-  title: 'WorkAssist',
-  ogTitle: 'WorkAssist',
+  title: 'Glowberries',
+  ogTitle: 'Glowberries',
   ogDescription: 'Сервис для удобного менеджмента ваших компаний и вакансий на СП и СПм',
   description: 'Сервис для удобного менеджмента ваших компаний и вакансий на СП и СПм',
-  themeColor: '#4cc9f0'
+  themeColor: '#4cc9f0',
+  ogImage: '/img/market/cover.png',
+  twitterCard: 'summary_large_image'
 });
 
 useHead({
-  link: [{ rel: 'icon', type: 'image/x-icon', href: '/img/company/favicon.ico' }]
+  link: [{ rel: 'icon', type: 'image/x-icon', href: '/img/market/favicon.ico' }]
 });
 </script>
 <style lang="scss" scoped>
-.company-layout {
+.market-layout {
   .container {
     padding: 24px;
     padding-top: 48px;
