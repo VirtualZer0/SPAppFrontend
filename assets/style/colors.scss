@@ -1,0 +1,68 @@
+:root {
+  color-scheme: only dark;
+
+  --fg-color: #fff;
+  --bg-color: #1b1b1b;
+  --bg-card-color: #222222;
+  --bg-second-color: #272727;
+  --bg-overlay-color: #333;
+
+  --market-p1-color: #ffbe0b;
+  --market-p2-color: #fb5607;
+
+  --starter-p1-color: #ff0054;
+  --starter-p2-color: #9e0059;
+
+  --company-p1-color: #4cc9f0;
+  --company-p2-color: #4361ee;
+
+  --danger-color: #f44336;
+}
+
+.spapp-service {
+  --p1-color: #33ff9c;
+  --p2-color: #00b2ff;
+  --p1-color-spread: 51, 255, 156;
+  --p2-color-spread: 0, 178, 255;
+  --el-color: #61f5ad;
+  --interact-color: #41e6cc;
+  --scroll-track-color: rgba(49, 255, 156, 0.1);
+  --scroll-thumb-color: rgba(49, 255, 156, 0.3);
+  --selection-color: rgba(49, 255, 156, 0.7);
+}
+
+.market-service {
+  --p1-color: #ffbe0b;
+  --p2-color: #fb5607;
+  --p1-color-spread: 51, 255, 156;
+  --p2-color-spread: 251, 86, 7;
+  --el-color: #5EEAD4;
+  --interact-color: #41e6cc;
+  --scroll-track-color: rgba(49, 255, 156, 0.1);
+  --scroll-thumb-color: rgba(49, 255, 156, 0.3);
+  --selection-color: rgba(49, 255, 156, 0.7);
+}
+
+.wa-service {
+  --p1-color: #4cc9f0;
+  --p2-color: #4361ee;
+  --p1-color-spread: 76, 201, 240;
+  --p2-color-spread: 67, 97, 238;
+  --el-color: #4cc9f0;
+  --interact-color: #4cc9f0;
+  --scroll-track-color: rgba(76, 201, 240, 0.1);
+  --scroll-thumb-color: rgba(76, 201, 240, 0.3);
+  --selection-color: rgba(76, 201, 240, 0.7);
+}
+
+.starter-service {
+  --p1-color: #d40148;
+  --p2-color: #ac0081;
+  --p1-color-spread: 201, 0, 67;
+  --p2-color-spread: 172, 0, 129;
+  --el-color: #c90043;
+  --interact-color: #9e0059;
+  --scroll-track-color: rgba(255, 0, 84, 0.1);
+  --scroll-thumb-color: rgba(255, 0, 84, 0.3);
+  --selection-color: rgba(158, 0, 89, 0.7);
+}

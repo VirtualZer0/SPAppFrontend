@@ -1,0 +1,42 @@
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeUp {
+  0% {
+    transform: translateY(0px);
+    opacity: 0;
+  }
+
+  5% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-150px);
+    opacity: 0;
+  }
+}
+
+.profile-menu-enter-active,
+.profile-menu-leave-active {
+  transition: 0.3s ease;
+  transition-property: transform opacity;
+}
+
+.profile-menu-enter-from,
+.profile-menu-leave-to {
+  opacity: 0;
+  transform: translateY(-200px);
+
+  @media (max-width: 640px) {
+    opacity: 1;
+    transform: translateX(100%);
+  }
+}

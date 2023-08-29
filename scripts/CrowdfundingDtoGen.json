@@ -1,0 +1,19 @@
+{
+  "include": [
+    "../spapp-backend/Modules/Crowdfunding/Dtos/**/*.cs"
+  ],
+  "namespace": "CrowdfundingDto",
+  "output": "./api/dtos/crowdfundingDto.d.ts",
+  "camelCase": true,
+  "camelCaseEnums": false,
+  "camelCaseOptions": {
+    "pascalCase": false,
+    "preserveConsecutiveUppercase": false,
+    "locale": "en-US"
+  },
+  "numericEnums": false,
+  "omitFilePathComment": false,
+  "omitSemicolon": false,
+  "stringLiteralTypesInsteadOfEnums": false,
+  "customTypeTranslations": {}
+}

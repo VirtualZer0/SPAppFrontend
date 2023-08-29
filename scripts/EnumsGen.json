@@ -1,0 +1,19 @@
+{
+  "include": ["../spapp-backend/Core/Enums/**/*.cs"],
+  "namespace": null,
+  "output": "./api/enums.ts",
+  "camelCase": true,
+  "camelCaseEnums": false,
+  "camelCaseOptions": {
+    "pascalCase": false,
+    "preserveConsecutiveUppercase": false,
+    "locale": "en-US"
+  },
+  "numericEnums": true,
+  "omitFilePathComment": false,
+  "omitSemicolon": false,
+  "stringLiteralTypesInsteadOfEnums": false,
+  "customTypeTranslations": {
+
+  }
+}

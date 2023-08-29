@@ -1,0 +1,31 @@
+import dayjs from 'dayjs';
+import relativeTime from 'dayjs/plugin/relativeTime';
+import customParseFormat from 'dayjs/plugin/customParseFormat';
+import localizedFormat from 'dayjs/plugin/localizedFormat';
+import duration from 'dayjs/plugin/duration';
+import utc from 'dayjs/plugin/utc';
+import timezone from 'dayjs/plugin/timezone';
+import 'dayjs/locale/ru';
+
+export default defineNuxtPlugin((nuxtApp) => {
+  dayjs.extend(relativeTime);
+  dayjs.extend(customParseFormat);
+  dayjs.extend(duration);
+  dayjs.extend(localizedFormat);
+  dayjs.extend(utc);
+  dayjs.extend(timezone);
+  dayjs.locale('ru');
+  nuxtApp.provide('dayjs', dayjs);
+});
+
+declare module '#app' {
+  interface NuxtApp {
+    $dayjs: dayjs.Dayjs;
+  }
+}
+
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    $dayjs(date?: dayjs.ConfigType): dayjs.Dayjs;
+  }
+}

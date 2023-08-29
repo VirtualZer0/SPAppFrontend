@@ -1,0 +1,19 @@
+{
+  "include": [
+    "../spapp-backend/Core/Dtos/**/*.cs"
+  ],
+  "namespace": "MainDto",
+  "output": "./api/dtos/mainDto.d.ts",
+  "camelCase": true,
+  "camelCaseEnums": false,
+  "camelCaseOptions": {
+    "pascalCase": false,
+    "preserveConsecutiveUppercase": false,
+    "locale": "en-US"
+  },
+  "numericEnums": false,
+  "omitFilePathComment": false,
+  "omitSemicolon": false,
+  "stringLiteralTypesInsteadOfEnums": false,
+  "customTypeTranslations": {}
+}

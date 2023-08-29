@@ -1,0 +1,49 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "launch": "yarn install && nuxt build && pm2 start SPApp",
+    "dev": "nuxt prepare && nuxt dev --host",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "dto-gen": "csharp-models-to-typescript --config=scripts/MainDtoGen.json && csharp-models-to-typescript --config=scripts/MarketDtoGen.json && csharp-models-to-typescript --config=scripts/CrowdfundingDtoGen.json && csharp-models-to-typescript --config=scripts/AdminDtoGen.json && yarn eslint --no-ignore  --rule \"no-use-before-define: off\" --fix \"api/dtos/mainDto.d.ts\" --fix \"api/dtos/marketDto.d.ts\" --fix \"api/dtos/crowdfundingDto.d.ts\" --fix \"api/dtos/adminDto.d.ts\"",
+    "enum-gen": "csharp-models-to-typescript --config=scripts/EnumsGen.json && yarn eslint --no-ignore --rule \"no-use-before-define: off\" --fix \"api/enums.ts\"",
+    "full-gen": "yarn dto-gen && yarn enum-gen"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/device": "^3.1.0",
+    "@nuxtjs/eslint-config-typescript": "^12.0.0",
+    "@types/node": "^18.17.0",
+    "@types/sanitize-html": "^2.9.0",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "csharp-models-to-typescript": "^0.23.0",
+    "dayjs-nuxt": "^1.1.2",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-vue": "^9.15.1",
+    "nuxt": "^3.7.0",
+    "prettier": "^2.8.8",
+    "sass": "^1.63.6",
+    "sass-loader": "^13.3.2",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@pinia/nuxt": "^0.4.11",
+    "@tinymce/tinymce-vue": "^5.1.0",
+    "@vueuse/components": "^10.4.1",
+    "@vueuse/core": "^10.4.1",
+    "@vueuse/nuxt": "^10.4.1",
+    "@vueuse/sound": "^2.0.1",
+    "normalize.css": "^8.0.1",
+    "primeicons": "^6.0.1",
+    "primevue": "^3.32.2",
+    "qrcode": "^1.5.3",
+    "sanitize-html": "^2.11.0"
+  }
+}
