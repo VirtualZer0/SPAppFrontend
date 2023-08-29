@@ -19,6 +19,16 @@ useHead({
 });
 
 useSeoMeta({
+  title: 'SP App',
+  ogTitle: 'SP App',
+  ogDescription: 'Единая экосистема сервисов для СП и СПм',
+  description: 'Единая экосистема сервисов для СП и СПм',
+  themeColor: '#33FF9C',
+  ogImage: '/img/cover.png',
+  twitterCard: 'summary_large_image'
+});
+
+useSeoMeta({
   themeColor: '#31ff9c'
 });
 

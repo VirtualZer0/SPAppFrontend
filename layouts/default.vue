@@ -8,12 +8,6 @@
 </template>
 <script lang="ts" setup>
 import MainHeader from '~/components/blocks/nav/MainHeader.vue';
-
-useSeoMeta({
-  ogSiteName: 'SPApp',
-  ogImage: '/img/cover.png',
-  twitterCard: 'summary_large_image'
-});
 </script>
 <style lang="scss" scoped>
 .main-layout {
