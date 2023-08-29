@@ -81,6 +81,7 @@ const currentService = computed(() => services.find((s) => s.key === mainStore.s
     h1 {
       margin: 0;
       font-size: 1.6rem;
+      white-space: nowrap;
     }
 
     &:hover {
