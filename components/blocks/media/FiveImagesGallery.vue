@@ -102,5 +102,46 @@ const props = defineProps({
       overflow: hidden;
     }
   }
+
+  @media (max-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    max-height: 650px;
+
+    &.c-5 {
+      grid-template-areas:
+        'i-1 i-1'
+        'i-2 i-3'
+        'i-4 i-5';
+    }
+
+    &.c-4 {
+      grid-template-areas:
+        'i-1 i-1'
+        'i-2 i-2'
+        'i-3 i-4';
+    }
+
+    &.c-3 {
+      grid-template-areas:
+        'i-1 i-1'
+        'i-2 i-2'
+        'i-3 i-3';
+    }
+
+    &.c-2 {
+      grid-template-areas:
+        'i-1 i-2'
+        'i-1 i-2'
+        'i-1 i-2';
+    }
+
+    &.c-1 {
+      grid-template-areas:
+        'i-1 i-1'
+        'i-1 i-1'
+        '. .';
+    }
+  }
 }
 </style>

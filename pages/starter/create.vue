@@ -1,7 +1,7 @@
 <template>
   <section class="page starter-create-page">
     <h1>Создание нового сбора</h1>
-    <CrowdfundEditor />
+    <CrowdfundEditor @cancel="router.push('/starter')" />
   </section>
 </template>
 <script lang="ts" setup>
@@ -14,9 +14,10 @@ definePageMeta({
 });
 
 const mainStore = useMainStore();
+const router = useRouter();
 
 if (!mainStore.user.isAuthorized) {
-  useRouter().replace('/starter');
+  router.replace('/starter');
 }
 </script>
 <style lang="scss" scoped>

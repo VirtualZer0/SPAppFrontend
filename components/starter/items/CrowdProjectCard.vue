@@ -32,8 +32,11 @@
     <template #subtitle>
       <div class="date flex-line">
         <span class="pi pi-clock" />
-        Осталось
-        {{ ($dayjs as any).duration($dayjs(company.endDate + 'Z').diff()).format('D дней H часов') }}
+        <span v-if="!company.isOver">
+          Осталось
+          {{ ($dayjs as any).duration($dayjs(company.endDate + 'Z').diff()).format('D дней H часов') }}
+        </span>
+        <span v-else>Завершена</span>
       </div>
     </template>
     <template #content>
@@ -226,6 +229,10 @@ const supportCompany = async () => {
   @media (max-width: 640px) {
     .preview {
       height: 148px;
+
+      &-container {
+        max-height: 148px;
+      }
     }
   }
 }

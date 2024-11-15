@@ -9,8 +9,21 @@
 <script lang="ts" setup>
 import { getServiceRootByLayout } from '~/utils/getServiceRootByUrl';
 
+const props = defineProps({
+  to: {
+    type: String,
+    required: false,
+    default: undefined
+  }
+});
+
 const back = () => {
   const router = useRouter();
+  if (props.to) {
+    router.push(props.to);
+    return;
+  }
+
   if (window.history.state.back) {
     router.go(-1);
   } else {

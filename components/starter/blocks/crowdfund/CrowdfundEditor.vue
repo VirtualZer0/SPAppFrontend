@@ -109,22 +109,17 @@
             type="submit"
             class="text-l"
             :disabled="isLoading || (editMode && curCompany.isOver)"
-          >
-            <span v-if="!isLoading">{{ editMode ? 'Сохранить' : 'Создать' }}</span>
-            <span
-              v-else
-              class="pi pi-spinner spinner-anim text-l"
-            />
-          </Button>
+            :loading="isLoading"
+            :label="editMode ? 'Сохранить' : 'Создать'"
+          />
         </ButtonPrice>
         <Button
           size="large"
           class="text-l"
           :disabled="isLoading"
+          label="Отмена"
           @click="emits('cancel')"
-        >
-          <span>Отмена</span>
-        </Button>
+        />
       </div>
     </form>
   </section>

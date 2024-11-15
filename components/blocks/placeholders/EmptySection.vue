@@ -72,7 +72,11 @@ const emits = defineEmits(['action']);
 
   @media (max-width: 640px) {
     img {
-      height: 184px;
+      height: 125px;
+    }
+
+    .text {
+      font-size: 1.2rem;
     }
   }
 }

@@ -18,14 +18,21 @@
           <h2>Starter</h2>
         </div>
       </div>
-      <div class="images">
+
+      <div class="user">
+        <div class="username">{{ company.data.user.userName }}</div>
         <img
-          v-for="(img, num) in company.data.images"
-          :key="num"
-          :style="{ width: `${company.data.images.length > 1 ? 85 / company.data.images.length : 50}%` }"
-          :src="getUploadedFile(img)"
+          :src="getMinecraftAvatar(company.data.user.minecraftUuid, 'full', 480)"
+          height="480"
+          alt="Скин"
+          class="skin"
         />
       </div>
+
+      <FourImagesGallery
+        :images="companyImages"
+        class="images"
+      />
       <div
         v-if="!company.data.isOver"
         class="bar"
@@ -43,7 +50,7 @@
           Собрано {{ company.data.currentAmount }} из {{ company.data.goal }}
           <img
             src="/img/icons/diamond.svg"
-            height="36"
+            height="32"
           />
         </h2>
         <h2>
@@ -62,13 +69,16 @@
 </template>
 <script setup lang="ts">
 import { useApi } from '~/api/useApi';
+import FourImagesGallery from '~/components/blocks/media/FourImagesGallery.vue';
 import { getUploadedFile } from '~/utils/getUploadedFile';
+import { getMinecraftAvatar } from '~/utils/thirdparty/getMinecraftAvatar';
 
 const id = parseInt(useRoute().params.id);
 const api = useApi().crowd;
 
 const { data: company } = await useAsyncData(() => api.getCompany(id));
 const companyPreview = getUploadedFile(company.value?.data?.preview, '/img/starter/company-placeholder.svg');
+const companyImages = company.value?.data?.images.map((img) => getUploadedFile(img));
 
 definePageMeta({
   layout: 'empty'
@@ -87,7 +97,7 @@ onMounted(() => {
 
   .preview-card {
     height: 100%;
-    background: var(--bg-color);
+    background: var(--bg-second-color);
     position: relative;
     overflow: hidden;
     display: flex;
@@ -106,7 +116,7 @@ onMounted(() => {
     border-radius: 12px;
     object-fit: cover;
     z-index: 0;
-    opacity: 0.6;
+    opacity: 0.5;
   }
 
   h1,
@@ -124,19 +134,37 @@ onMounted(() => {
     padding: 12px 14px;
   }
 
-  .images {
+  .username {
     display: flex;
     justify-content: center;
-    gap: 32px;
-    align-items: center;
-    position: relative;
-    height: 300px;
-    margin: 0 32px;
+    align-self: center;
+    padding: 0 16px;
+    width: auto;
+    font-weight: bold;
+    margin-left: 12px;
+    margin-bottom: 24px;
+    font-size: 1.5rem;
+    background: var(--p1-color);
+    border-radius: 8px;
+  }
 
-    img {
-      object-fit: cover;
+  .user {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    left: 12px;
+    bottom: -25px;
+  }
+
+  .images {
+    position: absolute;
+    width: 65%;
+    right: 32px;
+    top: 17%;
+    height: 420px;
+
+    &:deep(img) {
       border-radius: 8px;
-      height: 100%;
       box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
       background-color: var(--bg-color);
     }

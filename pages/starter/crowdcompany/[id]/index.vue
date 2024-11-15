@@ -12,7 +12,7 @@
       </span>
     </div>
     <h1 class="title">
-      <BackButton />
+      <BackButton to="/starter/all" />
       {{ company.title }}
     </h1>
     <FiveImagesGallery
@@ -86,7 +86,8 @@ import Comments from '~/components/blocks/other/Comments.vue';
 import UserTag from '~/components/special/UserTag.vue';
 
 definePageMeta({
-  layout: 'starter'
+  layout: 'starter',
+  alias: '/crowd:id()'
 });
 
 const api = useApi().crowd;

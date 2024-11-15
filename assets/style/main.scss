@@ -156,6 +156,7 @@ a {
 .particle {
   position: absolute;
   will-change: transform;
+  font-size: 0.75em;
 
   &.fadeup {
     animation: fadeUp ease forwards;
