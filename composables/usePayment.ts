@@ -5,23 +5,25 @@ export const usePayment = () => {
   const mainStore = useMainStore();
 
   const openPaymentWindow = async (amount = 10) => {
-    return await new Promise((resolve, _reject) => {
+    return new Promise((resolve, _reject) => {
       useNuxtApp().runWithContext(() => {
         const dialog = useDialog();
-        const CreatePaymentModal = defineAsyncComponent(() => import('~/components/blocks/modal/CreatePayment.vue'));
+        const CreatePaymentModal = defineAsyncComponent(
+          () => import('~/components/blocks/modal/CreatePayment.vue')
+        );
         const paymentModal = dialog.open(CreatePaymentModal, {
           props: {
             header: 'Пополнение SP App',
             style: {
-              width: '480px'
+              width: '480px',
             },
             breakpoints: {
-              '640px': '98vw'
+              '640px': '98vw',
             },
-            modal: true
+            modal: true,
           },
           data: {
-            amount
+            amount,
           },
           emits: {
             onSuccess: async () => {
@@ -32,10 +34,10 @@ export const usePayment = () => {
             onFail: () => {
               resolve(false);
               paymentModal.close();
-            }
+            },
           },
 
-          onClose: () => resolve(false)
+          onClose: () => resolve(false),
         });
       });
     });

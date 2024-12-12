@@ -6,9 +6,9 @@ export const files = {
     for (let i = 0; i < data.length; i++) {
       formData.append(`file-${i}`, data[i]);
     }
-    return await useFetchApi<MainDto.FileInfoDto[]>('/files/upload', {
+    return useFetchApi<MainDto.FileInfoDto[]>('/files/upload', {
       method: 'POST',
-      body: formData
+      body: formData,
     });
-  }
+  },
 };

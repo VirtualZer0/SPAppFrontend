@@ -61,12 +61,13 @@ export const useAuthorization = () => {
 
   const tryRequestAuth = async (): Promise<boolean> => {
     if (!mainStore.user.isAuthorized) {
-      return await new Promise((resolve, reject) => {
+      return new Promise((resolve, reject) => {
         useNuxtApp().runWithContext(() => {
           const confirm = useConfirm();
           confirm.require({
             header: 'Требуется авторизация',
-            message: 'Чтобы выполнить это действие, вы должны авторизоваться. Продолжить?',
+            message:
+              'Чтобы выполнить это действие, вы должны авторизоваться. Продолжить?',
             icon: 'pi pi-exclamation-triangle',
             acceptLabel: 'Да',
             rejectLabel: 'Нет',
@@ -79,7 +80,7 @@ export const useAuthorization = () => {
               }
             },
             reject: () => resolve(false),
-            onHide: () => resolve(false)
+            onHide: () => resolve(false),
           });
         });
       });

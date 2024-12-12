@@ -5,24 +5,26 @@ export const useCrowdfundSupport = () => {
   const mainStore = useMainStore();
 
   const openSupportWindow = async (id: number, amount = 10) => {
-    return await new Promise((resolve, _reject) => {
+    return new Promise((resolve, _reject) => {
       useNuxtApp().runWithContext(() => {
         const dialog = useDialog();
-        const CrowdfundSupportModal = defineAsyncComponent(() => import('~/components/starter/modal/SupportCrowdfund.vue'));
+        const CrowdfundSupportModal = defineAsyncComponent(
+          () => import('~/components/starter/modal/SupportCrowdfund.vue')
+        );
         const crowdfundModal = dialog.open(CrowdfundSupportModal, {
           props: {
             header: 'Поддержать проект',
             style: {
-              width: '480px'
+              width: '480px',
             },
             breakpoints: {
-              '640px': '98vw'
+              '640px': '98vw',
             },
-            modal: true
+            modal: true,
           },
           data: {
             id,
-            amount
+            amount,
           },
           emits: {
             onSuccess: async () => {
@@ -33,10 +35,10 @@ export const useCrowdfundSupport = () => {
             onFail: () => {
               resolve(false);
               crowdfundModal.close();
-            }
+            },
           },
 
-          onClose: () => resolve(false)
+          onClose: () => resolve(false),
         });
       });
     });

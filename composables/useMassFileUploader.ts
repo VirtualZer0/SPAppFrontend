@@ -10,7 +10,7 @@ const uploader = async (files: Array<File | string | null>) => {
   });
 
   if (uploadArr.length > 0) {
-    return await api.upload(uploadArr);
+    return api.upload(uploadArr);
   }
 };
 
